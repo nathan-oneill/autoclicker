@@ -49,6 +49,7 @@ class Record:
     @classmethod
     def start(cls, waitForKey: keyboard.Key | None = keyboard.Key.esc, stopKey = keyboard.Key.esc):
         """Start recording a sequence."""
+        print('Recording initiated')
         # Stop and start conditions
         cls.stopKey = stopKey
         if waitForKey is not None:
@@ -176,6 +177,7 @@ class Playback:
             print('ERR: stopKey must be a valid key')
             return
 
+        print('Macro playback initiated')
         if waitForKey is not None:
             waitUntilKeyPressed(waitForKey)
         
@@ -234,5 +236,3 @@ if __name__ == '__main__':
     Record.start()
     # data = <COPY HERE>
     # Playback.start(data)
-
-    
